@@ -1,30 +1,42 @@
 // src/components/sections/contactSection.tsx
 import { Home, PhoneCall, Mail } from "lucide-react";
 
-/**
- * ContactSection: displays office address, phone, and email icons and info.
- */
 export function ContactSection() {
   return (
-    <section id="contact" className="bg-card text-card-foreground py-16 px-6 md:px-24">
-        <h2 className="text-3xl font-bold text-center mb-12">Contact Us</h2>
-        <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-                <Home className="mx-auto mb-2" size={32} />
-                <p>6a Alternative Rte, Lekki Peninsula II 106104, Lagos</p>
-            </div>
-
-            <div>
-                <PhoneCall className="mx-auto mb-2" size={32} />
-                <a href="tel:+2348165920863" className="hover:underline">
-                    +234 0816 592 0863
+    <section id="contact" className="py-20 px-6 md:px-24 bg-card text-card-foreground">
+        <div className="container mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">Contact Us</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <a href="#" className="group h-full">
+                    <div className="flex flex-col items-center p-6 bg-card rounded-lg shadow-xl h-full">
+                        <Home className="text-blue-500 dark:text-blue-400 mb-4" size={48} />
+                        <h4 className="text-lg font-semibold mb-2">Our Office</h4>
+                        <p className="text-center text-card-foreground group-hover:underline">
+                            6a Alternative Rte, Lekki Peninsula II <br />
+                            106104, Lagos, Nigeria
+                        </p>
+                    </div>
                 </a>
-            </div>
 
-            <div>
-                <Mail className="mx-auto mb-2" size={32} />
-                <a href="mailto:info@crescohomes.ng" className="hover:underline">
-                    info@crescohomes.ng
+                <a href="tel:+2348165920863" className="group h-full">
+                    <div className="flex flex-col items-center p-6 bg-card rounded-lg shadow-xl h-full">
+                        <PhoneCall className="text-green-500 dark:text-green-400 mb-4" size={48} />
+                        <h4 className="text-lg font-semibold mb-2">Call Us</h4>
+                        <p className="text-center text-card-foreground group-hover:underline">
+                        +234 0816 592 0863
+                        </p>
+                    </div>
+                </a>
+
+                <a href="mailto:info@crescohomes.ng" className="group h-full">
+                    <div className="flex flex-col items-center p-6 bg-card rounded-lg shadow-xl h-full">
+                        <Mail className="text-orange-500 dark:text-orange-400 mb-4" size={48} />
+                        <h4 className="text-lg font-semibold mb-2">Email Us</h4>
+                        <p className="text-center text-card-foreground group-hover:underline">
+                            info@crescohomes.ng
+                        </p>
+                    </div>
                 </a>
             </div>
         </div>

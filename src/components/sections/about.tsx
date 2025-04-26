@@ -29,9 +29,9 @@ const aboutUsData = [
 
 export function AboutUsSection() {
   return (
-    <section id="about" className="py-16 px-6 md:px-24 bg-gray-100 dark:bg-gray-800 text-card-foreground">
+    <section id="about" className="min-h-screen py-16 px-6 md:px-24 bg-gray-100 dark:bg-gray-800 text-card-foreground">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">About Cresco Homes & Properties</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">About Cresco Homes</h2>
         <div className="grid md:grid-cols-3 gap-10">
           {aboutUsData.map((item, index) => (
             <div

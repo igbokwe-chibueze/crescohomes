@@ -47,7 +47,7 @@ export function StatsSection() {
   }, [active]);
 
   return (
-    <section id="stats" ref={ref} className="bg-card py-16 px-6 md:px-24">
+    <section id="stats" ref={ref} className="bg-gray-100 dark:bg-gray-800 py-16 px-6 md:px-24">
       <h2 className="text-3xl font-bold text-center mb-12 text-card-foreground">
         Our Achievements
       </h2>

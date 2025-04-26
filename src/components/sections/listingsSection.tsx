@@ -44,7 +44,7 @@ export function ListingsSection() {
         {featuredProperties.map((property) => (
           <Card
             key={property.id}
-            className="rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border-0"
+            className="rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border-0"
           >
             <div className="relative w-full h-48 md:h-56 overflow-hidden rounded-t-2xl">
               <Image
@@ -55,10 +55,11 @@ export function ListingsSection() {
                 className="transition-transform duration-300 transform hover:scale-105"
               />
             </div>
-            <CardContent className="px-4 py-3">
-                <h3 className="text-xl font-semibold mb-2">{property.title}</h3>
-                <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center text-sm text-card-foreground opacity-70 mb-1">
+            <CardContent className="px-4 py-3 space-y-4">
+                <h3 className="text-xl font-semibold">{property.title}</h3>
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-3 md:space-y-0">
+
+                    <div className="flex items-center text-sm text-card-foreground opacity-70">
                         <Bed className="mr-1" />
                         <span>{property.beds} Beds</span>
 
