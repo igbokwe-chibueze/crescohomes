@@ -19,10 +19,15 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   // List of section IDs for navigation
-  const navItems = ["hero", "statement", "listings", "contact"];
+  const navItems = ["hero", "statement", "about", "listings", "contact"];
 
   // Determine link text color class based on scroll state
   const linkColorClass = scrolled ? "text-card-foreground" : "text-white";
+
+  // Pick the right bg/text classes
+  // const triggerClasses = scrolled
+  //   ? "bg-card text-card-foreground"
+  //   : "bg-transparent text-white"
 
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
@@ -92,13 +97,14 @@ export function Navbar() {
         className="md:hidden p-2 rounded focus:outline-none focus:ring z-30"
         aria-label="Toggle mobile menu"
       >
-        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} className={`${linkColorClass}`}/>}
       </button>
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div 
-          className="fixed inset-0 bg-card bg-opacity-95 flex flex-col items-center justify-center space-y-8 md:hidden"
+          className="fixed inset-0 bg-card bg-opacity-95 flex flex-col items-center justify-center 
+          space-y-8 md:hidden"
         >
           {navItems.map((id) => (
             <button
@@ -107,12 +113,12 @@ export function Navbar() {
                 setMobileMenuOpen(false);
                 scrollToSection(id);
               }}
-              className={`text-2xl font-medium hover:text-blue-600 transition ${linkColorClass}`}
+              className="text-2xl font-medium hover:text-blue-600 transition"
             >
               {id.charAt(0).toUpperCase() + id.slice(1)}
             </button>
           ))}
-          <ModeToggle />
+          <ModeToggle  />
         </div>
       )}
     </nav>

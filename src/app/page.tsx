@@ -5,6 +5,7 @@ import { ListingsSection } from "@/components/sections/listingsSection";
 import { StatsSection } from "@/components/sections/statsSection";
 import { ContactSection } from "@/components/sections/contactSection";
 import { Footer } from "@/components/sections/footer";
+import { AboutUsSection } from "@/components/sections/about";
 
 export default function LandingPage() {
 
@@ -18,6 +19,8 @@ export default function LandingPage() {
 
       {/* Company Statement */}
       <StatementSection/>
+
+      <AboutUsSection/>
 
       {/* Featured Properties */}
       <ListingsSection/>
