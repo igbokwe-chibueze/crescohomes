@@ -47,7 +47,7 @@ export function Navbar() {
       className={
         `fixed top-0 left-0 w-full z-50 flex items-center justify-between p-4 transition-colors duration-300 ${
           scrolled ? "bg-card shadow-md" : "bg-transparent"
-        } ${linkColorClass}`
+        } `
       }
     >
       {/* Logo Section */}
@@ -76,14 +76,14 @@ export function Navbar() {
           <button
             key={id}
             onClick={() => scrollToSection(id)}
-            className="hover:text-blue-600 transition"
+            className={`hover:text-blue-600 transition ${linkColorClass}`}
           >
             {id.charAt(0).toUpperCase() + id.slice(1)}
           </button>
         ))}
 
         {/* Theme Toggle Button */}
-        <ModeToggle />
+        <ModeToggle scrolled={scrolled} />
       </div>
 
       {/* Mobile Menu Toggle Button */}
@@ -97,7 +97,9 @@ export function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 bg-card bg-opacity-95 flex flex-col items-center justify-center space-y-8 md:hidden">
+        <div 
+          className="fixed inset-0 bg-card bg-opacity-95 flex flex-col items-center justify-center space-y-8 md:hidden"
+        >
           {navItems.map((id) => (
             <button
               key={id}
@@ -105,7 +107,7 @@ export function Navbar() {
                 setMobileMenuOpen(false);
                 scrollToSection(id);
               }}
-              className="text-2xl font-medium hover:text-blue-600 transition"
+              className={`text-2xl font-medium hover:text-blue-600 transition ${linkColorClass}`}
             >
               {id.charAt(0).toUpperCase() + id.slice(1)}
             </button>
