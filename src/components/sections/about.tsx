@@ -16,7 +16,7 @@ const aboutUsData = [
     description:
       "We pride ourselves on delivering exceptional real estate solutions tailored to the unique needs of each client. Our full-service brokerage ensures seamless property sales and acquisitions, combining industry expertise with personalized service to exceed expectations.",
     readMoreLink: "#sale-details", // Replace with actual link if needed
-    imageSrc: "/apartment 1.jpeg", // Replace with your sale image
+    imageSrc: "/pool.jpeg", // Replace with your sale image
   },
   {
     title: "Property Development",

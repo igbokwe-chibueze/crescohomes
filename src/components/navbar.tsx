@@ -19,7 +19,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   // List of section IDs for navigation
-  const navItems = ["hero", "statement", "about", "listings", "contact"];
+  const navItems = ["home", "statement", "about", "listings", "contact"];
 
   // Determine link text color class based on scroll state
   const linkColorClass = scrolled ? "text-card-foreground" : "text-white";

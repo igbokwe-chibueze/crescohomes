@@ -46,7 +46,7 @@ export function ListingsSection() {
             key={property.id}
             className="rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border-0"
           >
-            <div className="relative w-full h-48 md:h-56 overflow-hidden rounded-t-2xl">
+            <div className="relative w-full h-64 md:h-80 overflow-hidden rounded-t-2xl">
               <Image
                 src={property.image}
                 alt={property.title}
