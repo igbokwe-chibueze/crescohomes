@@ -6,9 +6,10 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Home, PhoneCall, Mail, Instagram } from "lucide-react";
+import { Home, PhoneCall, Mail, Instagram, Facebook, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { ModeToggle } from "@/components/ui/toggle";
+import { Navbar } from "@/components/navbar";
 
 const featuredProperties = [
     {
@@ -93,25 +94,7 @@ export default function LandingPage() {
     return (
       <main className="min-h-screen bg-card text-gray-800">
         {/* Navbar */}
-        <nav className="fixed top-0 left-0 w-full bg-card shadow z-50 py-4 px-6 md:px-24 
-          flex justify-between items-center text-card-foreground"
-        >
-          <Link href={"/"}>
-            <Image src={"/logo.png"} alt="logo" width={164} height={48}/>
-          </Link>
-          <div className="space-x-6 hidden md:flex">
-            {["hero", "statement", "listings", "contact"].map((id) => (
-              <button
-                key={id}
-                onClick={() => scrollToSection(id)}
-                className="hover:text-blue-600 transition"
-              >
-                {id.charAt(0).toUpperCase() + id.slice(1)}
-              </button>
-            ))}
-            <ModeToggle/>
-          </div>
-        </nav>
+        <Navbar scrollToSection={scrollToSection} />
 
         {/* Hero Section */}
         <section id="hero" 
@@ -193,11 +176,11 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
               <Home className="mx-auto mb-2" size={32} />
-              <p>23 Banana Island Road, Ikoyi, Lagos</p>
+              <p>6a Alternative Rte, Lekki Penninsula II 106104, Lagos, Lekki 106104</p>
             </div>
             <div>
               <PhoneCall className="mx-auto mb-2" size={32} />
-              <p>+234 800 000 0000</p>
+              <p>+234 0816 592 0863</p>
             </div>
             <div>
               <Mail className="mx-auto mb-2" size={32} />
@@ -211,6 +194,14 @@ export default function LandingPage() {
           <div className="flex flex-col md:flex-row justify-between items-center px-6 md:px-24">
             <p>&copy; {new Date().getFullYear()} Cresco Homes. All rights reserved.</p>
             <div className="flex space-x-4 mt-4 md:mt-0">
+              <a href="https://web.facebook.com/crescorealty/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <Facebook className="hover:text-blue-500" />
+              </a>
+
               <a href="https://www.instagram.com/crescohomes?igsh=MTQ2dmVueTB0bXphYg=="
                 target="_blank"
                 rel="noopener noreferrer"
@@ -218,8 +209,14 @@ export default function LandingPage() {
               >
                 <Instagram className="hover:text-pink-500" />
               </a>
-              {/* <a href="#" aria-label="Facebook"><Facebook className="hover:text-blue-500" /></a>
-              <a href="#" aria-label="Twitter"><Twitter className="hover:text-blue-400" /></a> */}
+
+              <a href="https://www.linkedin.com/company/cresco-homes-and-properties/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="hover:text-blue-500" />
+              </a>
             </div>
           </div>
         </footer>
