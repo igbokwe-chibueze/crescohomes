@@ -1,7 +1,10 @@
 // src/components/sections/about.tsx
-// src/components/sections/aboutUsSection.tsx
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
+
+import { motion } from "framer-motion";
 
 const aboutUsData = [
   {
@@ -9,14 +12,14 @@ const aboutUsData = [
     description:
       "At Cresco Homes & Properties, we offer expert investment advisory services, helping clients make smart, profitable real estate decisions. From brokerage to property valuation and mortgage consultancy, we guide investors through every step, maximizing returns and building lasting value.",
     readMoreLink: "#investment-details", // Replace with actual link if needed
-    imageSrc: "/apartment 1.jpeg", // Replace with your investment image
+    imageSrc: "/pool.jpeg", // Replace with your investment image
   },
   {
     title: "Property Sale",
     description:
       "We pride ourselves on delivering exceptional real estate solutions tailored to the unique needs of each client. Our full-service brokerage ensures seamless property sales and acquisitions, combining industry expertise with personalized service to exceed expectations.",
     readMoreLink: "#sale-details", // Replace with actual link if needed
-    imageSrc: "/pool.jpeg", // Replace with your sale image
+    imageSrc: "/kitchen.jpeg", // Replace with your sale image
   },
   {
     title: "Property Development",
@@ -30,7 +33,12 @@ const aboutUsData = [
 export function AboutUsSection() {
   return (
     <section id="about" className="min-h-screen py-16 px-6 md:px-24 bg-gray-100 dark:bg-gray-800 text-card-foreground">
-      <div className="container mx-auto">
+      <motion.div 
+        whileInView={{ y: [100, 0], opacity: [0, 1] }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5 }}
+        className="container mx-auto"
+      >
         <h2 className="text-3xl font-bold text-center mb-12">About Cresco Homes</h2>
         <div className="grid md:grid-cols-3 gap-10">
           {aboutUsData.map((item, index) => (
@@ -61,7 +69,7 @@ export function AboutUsSection() {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

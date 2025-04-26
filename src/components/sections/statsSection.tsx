@@ -2,6 +2,7 @@
 "use client"
 
 import { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
 
 /**
  * StatsSection: animates and displays counters for projects, clients, and locations.
@@ -48,23 +49,31 @@ export function StatsSection() {
 
   return (
     <section id="stats" ref={ref} className="bg-gray-100 dark:bg-gray-800 py-16 px-6 md:px-24">
-      <h2 className="text-3xl font-bold text-center mb-12 text-card-foreground">
-        Our Achievements
-      </h2>
-      <div className="grid md:grid-cols-3 gap-8 text-center">
-        <div>
-          <p className="text-4xl font-bold text-blue-700">{projects}+</p>
-          <p className="text-lg text-card-foreground">Projects Completed</p>
+      <motion.div
+        whileInView={{ y: [100, 0], opacity: [0, 1] }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5 }}
+      >
+        <h2 className="text-3xl font-bold text-center mb-12 text-card-foreground">
+          Our Achievements
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div>
+            <p className="text-4xl font-bold text-blue-700">{projects}+</p>
+            <p className="text-lg text-card-foreground">Projects Completed</p>
+          </div>
+          <div>
+            <p className="text-4xl font-bold text-blue-700">{clients}+</p>
+            <p className="text-lg text-card-foreground">Happy Clients</p>
+          </div>
+          <div>
+            <p className="text-4xl font-bold text-blue-700">{locations}+</p>
+            <p className="text-lg text-card-foreground">Locations Covered</p>
+          </div>
         </div>
-        <div>
-          <p className="text-4xl font-bold text-blue-700">{clients}+</p>
-          <p className="text-lg text-card-foreground">Happy Clients</p>
-        </div>
-        <div>
-          <p className="text-4xl font-bold text-blue-700">{locations}+</p>
-          <p className="text-lg text-card-foreground">Locations Covered</p>
-        </div>
-      </div>
+
+      </motion.div>
+
     </section>
   );
 }

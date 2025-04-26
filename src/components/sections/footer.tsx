@@ -1,4 +1,7 @@
 // src/components/sections/footer.tsx
+"use client"
+
+import { motion } from "framer-motion";
 import { Instagram, Facebook, Linkedin } from "lucide-react";
 
 /**
@@ -7,7 +10,12 @@ import { Instagram, Facebook, Linkedin } from "lucide-react";
 export function Footer() {
   return (
     <footer className="bg-black text-white py-6">
-      <div className="flex flex-col md:flex-row justify-between items-center px-6 md:px-24">
+      <motion.div
+        whileInView={{ y: [30, 0], opacity: [0, 1] }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="flex flex-col md:flex-row justify-between items-center px-6 md:px-24"
+      >
         <p>&copy; {new Date().getFullYear()} Cresco Homes. All rights reserved.</p>
         <div className="flex space-x-4 mt-4 md:mt-0">
           <a
@@ -35,7 +43,7 @@ export function Footer() {
             <Linkedin className="hover:text-blue-500" />
           </a>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }

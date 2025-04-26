@@ -4,6 +4,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 import { Menu, X } from "lucide-react";
 import { ModeToggle } from "@/components/ui/toggle";
 
@@ -76,7 +78,12 @@ export function Navbar() {
       </Link>
 
       {/* Desktop Navigation Links */}
-      <div className="hidden md:flex space-x-6 items-center">
+      <motion.div
+        whileInView={{ y: [-30, 0], opacity: [0, 1] }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="hidden md:flex space-x-6 items-center"
+      >
         {navItems.map((id) => (
           <button
             key={id}
@@ -89,7 +96,7 @@ export function Navbar() {
 
         {/* Theme Toggle Button */}
         <ModeToggle scrolled={scrolled} />
-      </div>
+      </motion.div>
 
       {/* Mobile Menu Toggle Button */}
       <button

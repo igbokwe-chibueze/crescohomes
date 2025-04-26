@@ -1,10 +1,18 @@
 // src/components/sections/contactSection.tsx
+"use client"
+
+import { motion } from "framer-motion";
 import { Home, PhoneCall, Mail } from "lucide-react";
 
 export function ContactSection() {
   return (
     <section id="contact" className="py-20 px-6 md:px-24 bg-card text-card-foreground">
-        <div className="container mx-auto">
+        <motion.div
+            whileInView={{ y: [100, 0], opacity: [0, 1] }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5 }}
+            className="container mx-auto"
+        >
             <h2 className="text-3xl font-bold text-center mb-12">Contact Us</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 
@@ -39,7 +47,7 @@ export function ContactSection() {
                     </div>
                 </a>
             </div>
-        </div>
+        </motion.div>
     </section>
   );
 }
