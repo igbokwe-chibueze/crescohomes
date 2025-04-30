@@ -42,7 +42,7 @@ export function ContactSection() {
                         <Mail className="text-orange-500 dark:text-orange-400 mb-4" size={48} />
                         <h4 className="text-lg font-semibold mb-2">Email Us</h4>
                         <p className="text-center text-card-foreground group-hover:underline">
-                            info@crescohomes.ng
+                            info@crescohomes.com
                         </p>
                     </div>
                 </a>
